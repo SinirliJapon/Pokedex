@@ -1,6 +1,6 @@
 import 'dart:convert';
-import 'package:http/http.dart' as http;
 import 'package:pokedex/pokemon_page_response.dart';
+import 'package:http/http.dart' as http;
 
 class PokemonRepository {
   final baseUrl = 'pokeapi.co';

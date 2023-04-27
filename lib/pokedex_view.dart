@@ -1,8 +1,8 @@
+import 'package:pokedex/bloc/pokemon_bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:pokedex/bloc/pokemon_state.dart';
 
-import 'bloc/pokemon_bloc.dart';
+import 'bloc/pokemon_state.dart';
 
 class PokedexView extends StatelessWidget {
   const PokedexView({super.key});
@@ -11,9 +11,7 @@ class PokedexView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Center(
-          child: Text('Pokedex'),
-        ),
+        title: const Center(child: Text('Pokedex')),
       ),
       body: BlocBuilder<PokemonBloc, PokemonState>(
         builder: (context, state) {
@@ -25,14 +23,18 @@ class PokedexView extends StatelessWidget {
             return GridView.builder(
               gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                   crossAxisCount: 3),
-              itemCount: state.pokemonLisgtings.length,
+              itemCount: state.pokemonListings.length,
               itemBuilder: (context, index) {
                 return Card(
+                  elevation: 2,
                   child: GridTile(
                     child: Column(
                       children: [
-                        Image.network(''),
-                        Text(state.pokemonLisgtings[index].name),
+                        Image.network(state.pokemonListings[index].imageUrl),
+                        Text(state.pokemonListings[index].name
+                                .substring(0, 1)
+                                .toUpperCase() +
+                            state.pokemonListings[index].name.substring(1))
                       ],
                     ),
                   ),
