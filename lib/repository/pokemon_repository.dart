@@ -1,7 +1,7 @@
 import 'dart:convert';
-import 'dart:math';
 import 'package:pokedex/data/pokemon_page_response.dart';
 import 'package:http/http.dart' as http;
+import 'package:pokedex/data/pokemon_species_info.dart';
 
 class PokemonRepository {
   final baseUrl = 'pokeapi.co';
@@ -21,15 +21,16 @@ class PokemonRepository {
     return PokemonPageResponse.fromJson(json);
   }
 
-  Future<dynamic> getPokemonSpeciesInfo(int pokemonId) async {
+  Future<PokemomonSpeciesInfoResponse> getPokemonSpeciesInfo(
+      int pokemonId) async {
     final uri = Uri.https(baseUrl, '/api/v2/pokemon-species/$pokemonId');
 
     try {
       final response = await client.get(uri);
       final json = jsonDecode(response.body);
-      print(json);
+      return PokemomonSpeciesInfoResponse.fromJson(json);
     } catch (e) {
-      print(e);
+      rethrow;
     }
   }
 }
