@@ -1,6 +1,6 @@
 import 'package:pokedex/bloc/pokemon_bloc.dart';
 import 'package:pokedex/bloc/pokemon_event.dart';
-import 'package:pokedex/pokedex_view.dart';
+import 'package:pokedex/screens/pokedex_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 

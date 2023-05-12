@@ -1,5 +1,3 @@
-import 'package:flutter/material.dart';
-
 abstract class PokemonEvent {}
 
 class PokemonPageRequest extends PokemonEvent {

@@ -1,4 +1,4 @@
-import 'package:pokedex/pokemon_page_response.dart';
+import 'package:pokedex/model/pokemon.dart';
 
 abstract class PokemonState {}
 
@@ -7,11 +7,11 @@ class PokemonInitial extends PokemonState {}
 class PokemonLoadInProgress extends PokemonState {}
 
 class PokemonPageLoadSuccess extends PokemonState {
-  final List<PokemonListing> pokemonListings;
+  final List<Pokemon> pokemon;
   final bool canLoadNextPage;
 
   PokemonPageLoadSuccess(
-      {required this.pokemonListings, required this.canLoadNextPage});
+      {required this.pokemon, required this.canLoadNextPage});
 }
 
 class PokemonPageLoadFailed extends PokemonState {
