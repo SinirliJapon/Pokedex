@@ -7,16 +7,7 @@ import 'package:pokedex/repository/pokemon_repository.dart';
 class PokemonDetailsCubit extends Cubit<PokemonDetails> {
   final _pokemonRepository = PokemonRepository();
 
-  PokemonDetailsCubit()
-      : super(PokemonDetails(
-          id: 0,
-          name: "",
-          imageUrl: "",
-          types: [],
-          height: 0,
-          weight: 0,
-          description: "",
-        ));
+  PokemonDetailsCubit() : super(PokemonDetails.empty());
 
   void getPokemonDetails(int pokemonId) async {
     final responses = await Future.wait([
@@ -25,7 +16,7 @@ class PokemonDetailsCubit extends Cubit<PokemonDetails> {
     ]);
 
     final pokemonInfo = responses[0] as PokemonInfoResponse;
-    final speciesInfo = responses[1] as PokemonSpeciesInfoResponse;
+    final speciesInfo = responses[1] as PokemomonSpeciesInfoResponse;
 
     emit(PokemonDetails(
       id: pokemonInfo.id,
@@ -38,13 +29,5 @@ class PokemonDetailsCubit extends Cubit<PokemonDetails> {
     ));
   }
 
-  void clearPokemonDetails() => emit(PokemonDetails(
-        id: 0,
-        name: "",
-        imageUrl: "",
-        types: [],
-        height: 0,
-        weight: 0,
-        description: "",
-      ));
+  void clearPokemonDetails() => emit(PokemonDetails.empty());
 }

@@ -1,11 +1,10 @@
 import 'package:pokedex/model/pokemon.dart';
 
 class PokemonPageResponse {
-  final List<Pokemon> pokemonListings;
+  final List<Pokemon> pokemon;
   final bool canLoadNextPage;
 
-  PokemonPageResponse(
-      {required this.pokemonListings, required this.canLoadNextPage});
+  PokemonPageResponse({required this.pokemon, required this.canLoadNextPage});
 
   factory PokemonPageResponse.fromJson(Map<String, dynamic> json) {
     final canLoadNextPage = json['next'] != null;
@@ -14,6 +13,6 @@ class PokemonPageResponse {
         .toList();
 
     return PokemonPageResponse(
-        pokemonListings: pokemonListings, canLoadNextPage: canLoadNextPage);
+        pokemon: pokemonListings, canLoadNextPage: canLoadNextPage);
   }
 }
