@@ -14,7 +14,20 @@ class PokemonDetailsView extends StatelessWidget {
         builder: (context, details) {
           return details != null
               ? Center(
-                  child: Text(details.name),
+                  child: Column(
+                    children: [
+                      Image.network(details.imageUrl),
+                      Text(details.name),
+                      Text(details.description),
+                      Column(
+                        children: [
+                          Text(details.weight.toString()),
+                          Text(details.types.toString()),
+                          Text(details.height.toString()),
+                        ],
+                      ),
+                    ],
+                  ),
                 )
               : const Center(child: CircularProgressIndicator());
         },
