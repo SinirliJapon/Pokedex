@@ -1,6 +1,6 @@
 import 'package:pokedex/bloc/pokemon_state.dart';
 import 'package:flutter/material.dart';
-import 'package:pokedex/widgets/build_pokemon_card.dart';
+import 'package:pokedex/widgets/pokemon_card.dart';
 
 Widget buildPokemonGridView(
     BuildContext context, PokemonPageLoadSuccess state) {

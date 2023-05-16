@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:pokedex/bloc/pokemon_bloc.dart';
 import 'package:pokedex/bloc/pokemon_state.dart';
-import 'package:pokedex/widgets/build_pokemon_grid_view.dart';
+import 'package:pokedex/widgets/pokemon_grid_view.dart';
 
 class PokedexView extends StatelessWidget {
   const PokedexView({Key? key}) : super(key: key);

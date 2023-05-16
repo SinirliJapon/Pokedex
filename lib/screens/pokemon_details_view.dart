@@ -26,7 +26,7 @@ class PokemonDetailsView extends StatelessWidget {
                   builder: (context, snapshot) {
                     final backgroundColor = snapshot.data;
                     return Container(
-                      color: backgroundColor,
+                      color: backgroundColor?.withOpacity(0.8),
                       child: Center(
                         child: Column(
                           children: [
