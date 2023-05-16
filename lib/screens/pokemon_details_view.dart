@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:palette_generator/palette_generator.dart';
 import 'package:pokedex/bloc/pokemon_details_cubit.dart';
 import 'package:pokedex/model/pokemon_details.dart';
+import 'package:pokedex/widgets/pokemon_details_background.dart';
 import 'package:pokedex/widgets/pokemon_height.dart';
 import 'package:pokedex/widgets/pokemon_image.dart';
 import '../widgets/pokemon_name.dart';
@@ -11,13 +11,6 @@ import '../widgets/pokemon_weight.dart';
 
 class PokemonDetailsView extends StatelessWidget {
   const PokemonDetailsView({Key? key}) : super(key: key);
-
-  Future<Color?> pokedemonDetailsBackground(PokemonDetails details) async {
-    final paletteGenerator = await PaletteGenerator.fromImageProvider(
-      NetworkImage(details.imageUrl),
-    );
-    return paletteGenerator.dominantColor?.color;
-  }
 
   @override
   Widget build(BuildContext context) {
