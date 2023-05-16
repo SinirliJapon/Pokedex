@@ -5,6 +5,7 @@ import 'package:pokedex/bloc/pokemon_details_cubit.dart';
 import 'package:pokedex/bloc/pokemon_event.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:pokedex/constants/app_colors.dart';
 
 void main() {
   runApp(const MyApp());
@@ -18,7 +19,7 @@ class MyApp extends StatelessWidget {
     final pokemonDetailsCubit = PokemonDetailsCubit();
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      theme: ThemeData(primarySwatch: Colors.red),
+      theme: ThemeData(primarySwatch: AppColors.primarySwatch),
       home: MultiBlocProvider(
         providers: [
           BlocProvider(
