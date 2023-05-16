@@ -17,6 +17,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     final pokemonDetailsCubit = PokemonDetailsCubit();
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(primarySwatch: Colors.red),
       home: MultiBlocProvider(
         providers: [

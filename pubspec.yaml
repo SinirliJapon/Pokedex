@@ -14,6 +14,7 @@ dependencies:
   flutter_bloc: ^8.1.2
   http: ^0.13.5
   palette_generator: ^0.3.3+2
+  flutter_svg: ^2.0.5
 
 dev_dependencies:
   flutter_test:
@@ -22,5 +23,20 @@ dev_dependencies:
   flutter_lints: ^2.0.0
 
 flutter:
+  assets:
+    - assets/images/
+    # - assets/images/Dark_Type_Icon.svg.png
+    # - assets/images/Electric_Type_Icon.svg.png
+    # - assets/images/Fairy_Type_Icon.svg.png
+    # - assets/images/Fighting_Type_Icon.svg.png
+    # - assets/images/Ground_Type_Icon.svg.png
+    # - assets/images/Ice_Type_Icon.svg.png
+    # - assets/images/Normal_Type_Icon.svg.png
+    # - assets/images/Poison_Type_Icon.svg.png
+    # - assets/images/Psychic_Type_Icon.svg.png
+    # - assets/images/Rock_Type_Icon.svg.png
+    # - assets/images/Steel_Type_Icon.svg.png
+    # - assets/images/Water_Type_Icon.svg.png
+
 
   uses-material-design: true
