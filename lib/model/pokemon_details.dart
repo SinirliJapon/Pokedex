@@ -16,16 +16,4 @@ class PokemonDetails {
     required this.weight,
     required this.description,
   });
-
-  static PokemonDetails empty() {
-    return PokemonDetails(
-      id: 0,
-      name: '',
-      imageUrl: '',
-      types: [],
-      height: 0,
-      weight: 0,
-      description: '',
-    );
-  }
 }

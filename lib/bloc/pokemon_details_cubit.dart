@@ -4,10 +4,10 @@ import 'package:pokedex/data/pokemon_species_info_response.dart';
 import 'package:pokedex/model/pokemon_details.dart';
 import 'package:pokedex/repository/pokemon_repository.dart';
 
-class PokemonDetailsCubit extends Cubit<PokemonDetails> {
+class PokemonDetailsCubit extends Cubit<PokemonDetails?> {
   final _pokemonRepository = PokemonRepository();
 
-  PokemonDetailsCubit() : super(PokemonDetails.empty());
+  PokemonDetailsCubit() : super(null);
 
   void getPokemonDetails(int pokemonId) async {
     final responses = await Future.wait([
@@ -29,5 +29,5 @@ class PokemonDetailsCubit extends Cubit<PokemonDetails> {
     ));
   }
 
-  void clearPokemonDetails() => emit(PokemonDetails.empty());
+  void clearPokemonDetails() => emit(null);
 }
