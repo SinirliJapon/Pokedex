@@ -86,6 +86,14 @@ Widget pokemonTypeView(String type) {
       );
       color = const Color(0xFF6DACF8);
       break;
+    case 'electric':
+      icon = SvgPicture.asset(
+        'assets/icons/electric.svg',
+        width: 16,
+        height: 16,
+      );
+      color = const Color(0xFFF8D030);
+      break;
     case 'bug':
       icon = SvgPicture.asset(
         'assets/icons/bug.svg',
