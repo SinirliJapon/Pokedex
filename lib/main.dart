@@ -1,3 +1,4 @@
+import 'package:flutter/services.dart';
 import 'package:pokedex/app_navigator.dart';
 import 'package:pokedex/bloc/nav_cubit.dart';
 import 'package:pokedex/bloc/pokemon_bloc.dart';
@@ -8,7 +9,11 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:pokedex/constants/app_colors.dart';
 
 void main() {
-  runApp(const MyApp());
+  WidgetsFlutterBinding.ensureInitialized();
+  SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp])
+      .then((_) {
+    runApp(const MyApp());
+  });
 }
 
 class MyApp extends StatelessWidget {
