@@ -10,7 +10,6 @@ Future<Color?> pokedemonDetailsBackground(PokemonDetails details) async {
     );
     return paletteGenerator.dominantColor?.color;
   } catch (e) {
-    print('Error loading image: $e');
     return Colors.white; // Fallback color in case of an error
   }
 }
