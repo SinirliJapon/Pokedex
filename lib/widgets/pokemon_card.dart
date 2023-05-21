@@ -1,6 +1,7 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:palette_generator/palette_generator.dart';
 import 'package:pokedex/bloc/nav_cubit.dart';
+import 'package:pokedex/constants/app_colors.dart';
 import 'package:pokedex/model/pokemon.dart';
 import 'package:flutter/material.dart';
 
@@ -44,7 +45,9 @@ Widget buildPokemonCard(BuildContext context, Pokemon pokemon) {
                     Image.network(pokemon.imageUrl),
                     Text(
                       pokemon.name[0].toUpperCase() + pokemon.name.substring(1),
-                      style: const TextStyle(fontWeight: FontWeight.bold),
+                      style: const TextStyle(
+                          fontWeight: FontWeight.bold,
+                          color: AppColors.fontGrey),
                     ),
                   ],
                 ),
