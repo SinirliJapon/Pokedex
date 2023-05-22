@@ -78,6 +78,8 @@ Container pokemonDetailsContainer(
                           style: const TextStyle(fontSize: 16),
                         ),
                       ),
+                      const SizedBox(height: 20),
+                      Text(details.abilities.toString()),
                     ],
                   ),
                 ),
