@@ -27,6 +27,7 @@ class PokemonDetailsCubit extends Cubit<PokemonDetails?> {
       weight: pokemonInfo.weight,
       description: speciesInfo.description,
       abilities: pokemonInfo.abilities,
+      stats: pokemonInfo.stats,
     ));
   }
 

@@ -6,6 +6,7 @@ import 'package:pokedex/widgets/pokemon_height.dart';
 import 'package:pokedex/widgets/pokemon_id.dart';
 import 'package:pokedex/widgets/pokemon_image.dart';
 import 'package:pokedex/widgets/pokemon_name.dart';
+import 'package:pokedex/widgets/pokemon_stats.dart';
 import 'package:pokedex/widgets/pokemon_types.dart';
 import 'package:pokedex/widgets/pokemon_weight.dart';
 
@@ -71,20 +72,7 @@ Container pokemonDetailsContainer(
                           color: AppColors.dividerGrey,
                         ),
                       ),
-                      Column(
-                        children: [
-                          pokemonAbilities(details, backgroundColor),
-                          const SizedBox(height: 10),
-                          const Text(
-                            'ABILITIES',
-                            style: TextStyle(
-                              fontSize: 12,
-                              fontWeight: FontWeight.normal,
-                              color: AppColors.fontGrey,
-                            ),
-                          )
-                        ],
-                      ),
+                      Text(details.description),
                       const Padding(
                         padding: EdgeInsets.all(10.0),
                         child: Divider(
@@ -93,14 +81,9 @@ Container pokemonDetailsContainer(
                           color: AppColors.dividerGrey,
                         ),
                       ),
-                      Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: Text(
-                          details.description,
-                          style: const TextStyle(fontSize: 16),
-                        ),
-                      ),
-                      const SizedBox(height: 10),
+                      pokemonAbilities(details, backgroundColor),
+                      const SizedBox(height: 4),
+                      pokemonStats(details.stats),
                     ],
                   ),
                 ),

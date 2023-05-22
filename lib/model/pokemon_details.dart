@@ -7,6 +7,7 @@ class PokemonDetails {
   final int weight;
   final String description;
   final List<String> abilities;
+  final List<String> stats;
 
   PokemonDetails({
     required this.id,
@@ -17,5 +18,6 @@ class PokemonDetails {
     required this.weight,
     required this.description,
     required this.abilities,
+    required this.stats,
   });
 }
