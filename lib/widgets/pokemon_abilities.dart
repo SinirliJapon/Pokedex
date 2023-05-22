@@ -4,7 +4,7 @@ import 'package:pokedex/model/pokemon_details.dart';
 
 Row pokemonAbilities(PokemonDetails details, Color? color) {
   return Row(
-    mainAxisAlignment: MainAxisAlignment.center,
+    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
     children: details.abilities
         .map((ability) => pokemonAbilitiesView(ability, color))
         .toList(),

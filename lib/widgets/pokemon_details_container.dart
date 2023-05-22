@@ -72,7 +72,13 @@ Container pokemonDetailsContainer(
                           color: AppColors.dividerGrey,
                         ),
                       ),
-                      Text(details.description),
+                      Text(
+                        details.description,
+                        style: const TextStyle(
+                            fontSize: 16,
+                            fontWeight: FontWeight.bold,
+                            color: AppColors.fontGrey),
+                      ),
                       const Padding(
                         padding: EdgeInsets.all(10.0),
                         child: Divider(
