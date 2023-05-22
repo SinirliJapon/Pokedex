@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:pokedex/constants/app_colors.dart';
 import 'package:pokedex/model/pokemon_details.dart';
+import 'package:pokedex/widgets/pokemon_abilities.dart';
 import 'package:pokedex/widgets/pokemon_height.dart';
 import 'package:pokedex/widgets/pokemon_id.dart';
 import 'package:pokedex/widgets/pokemon_image.dart';
@@ -70,7 +71,28 @@ Container pokemonDetailsContainer(
                           color: AppColors.dividerGrey,
                         ),
                       ),
-                      const SizedBox(height: 30),
+                      Column(
+                        children: [
+                          pokemonAbilities(details, backgroundColor),
+                          const SizedBox(height: 10),
+                          const Text(
+                            'ABILITIES',
+                            style: TextStyle(
+                              fontSize: 12,
+                              fontWeight: FontWeight.normal,
+                              color: AppColors.fontGrey,
+                            ),
+                          )
+                        ],
+                      ),
+                      const Padding(
+                        padding: EdgeInsets.all(10.0),
+                        child: Divider(
+                          height: 10,
+                          thickness: 0.4,
+                          color: AppColors.dividerGrey,
+                        ),
+                      ),
                       Padding(
                         padding: const EdgeInsets.all(8.0),
                         child: Text(
@@ -78,8 +100,7 @@ Container pokemonDetailsContainer(
                           style: const TextStyle(fontSize: 16),
                         ),
                       ),
-                      const SizedBox(height: 20),
-                      Text(details.abilities.toString()),
+                      const SizedBox(height: 10),
                     ],
                   ),
                 ),
