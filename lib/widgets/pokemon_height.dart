@@ -3,10 +3,11 @@ import 'package:pokedex/constants/app_colors.dart';
 import 'package:pokedex/model/pokemon_details.dart';
 
 Column pokemonHeight(PokemonDetails details) {
+  final metricHeight = details.height / 10;
   return Column(
     children: [
       Text(
-        details.height.toDouble().toString(),
+        "${metricHeight.toDouble()}m",
         style: const TextStyle(
           fontSize: 18,
           fontWeight: FontWeight.bold,

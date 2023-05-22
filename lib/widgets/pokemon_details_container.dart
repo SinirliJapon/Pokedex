@@ -49,7 +49,7 @@ Container pokemonDetailsContainer(
                           children: [
                             pokemonHeight(details),
                             const VerticalDivider(
-                              width: 30,
+                              width: 24,
                               thickness: 0.2,
                               color: AppColors.dividerGrey,
                             ),
@@ -89,7 +89,7 @@ Container pokemonDetailsContainer(
                         padding: EdgeInsets.all(10.0),
                         child: Divider(
                           height: 10,
-                          thickness: 0.4,
+                          thickness: 0.2,
                           color: AppColors.dividerGrey,
                         ),
                       ),
