@@ -45,7 +45,7 @@ Column pokemonStats(List<String> stats) {
             ClipRRect(
               borderRadius: BorderRadius.circular(30),
               child: LinearProgressIndicator(
-                value: baseStat / 100,
+                value: baseStat / 150,
                 backgroundColor: Colors.grey[300],
                 valueColor: AlwaysStoppedAnimation<Color>(statColor),
                 minHeight: 20,
