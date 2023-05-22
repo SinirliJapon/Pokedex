@@ -47,6 +47,7 @@ Widget buildPokemonCard(BuildContext context, Pokemon pokemon) {
                       pokemon.name[0].toUpperCase() + pokemon.name.substring(1),
                       style: const TextStyle(
                           fontWeight: FontWeight.bold,
+                          fontSize: 16,
                           color: AppColors.fontGrey),
                     ),
                   ],
