@@ -89,7 +89,14 @@ Container pokemonDetailsContainer(PokemonDetails details) {
                         ),
                       ),
                       pokemonAbilities(details, color),
-                      const SizedBox(height: 4),
+                      const Padding(
+                        padding: EdgeInsets.all(10.0),
+                        child: Divider(
+                          height: 10,
+                          thickness: 0.2,
+                          color: AppColors.dividerGrey,
+                        ),
+                      ),
                       pokemonStats(details.stats),
                     ],
                   ),
