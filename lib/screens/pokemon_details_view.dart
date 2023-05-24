@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:pokedex/bloc/pokemon_details_cubit.dart';
 import 'package:pokedex/model/pokemon_details.dart';
-import 'package:pokedex/widgets/pokemon_details_background.dart';
 import 'package:pokedex/widgets/pokemon_details_container.dart';
 
 class PokemonDetailsView extends StatelessWidget {
@@ -17,13 +16,7 @@ class PokemonDetailsView extends StatelessWidget {
       body: BlocBuilder<PokemonDetailsCubit, PokemonDetails?>(
         builder: (context, details) {
           return details != null
-              ? FutureBuilder<Color?>(
-                  future: pokedemonDetailsBackground(details),
-                  builder: (context, snapshot) {
-                    final backgroundColor = snapshot.data;
-                    return pokemonDetailsContainer(backgroundColor, details);
-                  },
-                )
+              ? pokemonDetailsContainer(details)
               : const Center(child: CircularProgressIndicator());
         },
       ),

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:pokedex/constants/app_colors.dart';
 import 'package:pokedex/model/pokemon_details.dart';
 import 'package:pokedex/widgets/pokemon_abilities.dart';
+import 'package:pokedex/widgets/pokemon_background.dart';
 import 'package:pokedex/widgets/pokemon_height.dart';
 import 'package:pokedex/widgets/pokemon_id.dart';
 import 'package:pokedex/widgets/pokemon_image.dart';
@@ -10,10 +11,10 @@ import 'package:pokedex/widgets/pokemon_stats.dart';
 import 'package:pokedex/widgets/pokemon_types.dart';
 import 'package:pokedex/widgets/pokemon_weight.dart';
 
-Container pokemonDetailsContainer(
-    Color? backgroundColor, PokemonDetails details) {
+Container pokemonDetailsContainer(PokemonDetails details) {
+  final color = getPokemonBackgroundColor(details.types);
   return Container(
-    color: backgroundColor?.withOpacity(0.5),
+    color: color.withOpacity(0.8),
     child: Column(
       children: [
         pokemonImage(details),
@@ -87,13 +88,13 @@ Container pokemonDetailsContainer(
                           color: AppColors.dividerGrey,
                         ),
                       ),
-                      pokemonAbilities(details, backgroundColor),
+                      pokemonAbilities(details, color),
                       const SizedBox(height: 4),
                       pokemonStats(details.stats),
                     ],
                   ),
                 ),
-                pokemonID(backgroundColor, details),
+                pokemonID(color, details),
               ],
             ),
           ),
