@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:pokedex/bloc/pokemon_bloc.dart';
 import 'package:pokedex/bloc/pokemon_state.dart';
+import 'package:pokedex/constants/app_colors.dart';
 import 'package:pokedex/widgets/pokemon_grid_view.dart';
 
 class PokedexView extends StatelessWidget {
@@ -11,7 +12,14 @@ class PokedexView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Center(child: Text('Pokedex')),
+        title: const Center(
+            child: Text(
+          'Pokedex',
+          style: TextStyle(
+              color: AppColors.fontGrey,
+              fontWeight: FontWeight.bold,
+              fontSize: 22),
+        )),
       ),
       body: BlocBuilder<PokemonBloc, PokemonState>(
         builder: (context, state) {
