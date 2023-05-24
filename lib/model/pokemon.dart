@@ -3,7 +3,7 @@ class Pokemon {
   final String name;
 
   String get imageUrl =>
-      'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/$id.png';
+      'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/$id.png';
 
   Pokemon({
     required this.id,
