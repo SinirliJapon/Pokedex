@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:pokedex/constants/app_colors.dart';
 import 'package:pokedex/model/pokemon_details.dart';
 
 Row pokemonAbilities(PokemonDetails details, Color? color) {
@@ -17,13 +16,13 @@ Padding pokemonAbilitiesView(String ability, Color? color) {
     child: Container(
       padding: const EdgeInsets.all(8),
       decoration: BoxDecoration(
-        color: color?.withOpacity(0.5),
+        color: color,
         borderRadius: const BorderRadius.all(Radius.circular(8)),
       ),
       child: Text(
         ability.toUpperCase(),
-        style: const TextStyle(
-            color: AppColors.fontGrey, fontWeight: FontWeight.bold),
+        style:
+            const TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
       ),
     ),
   );
