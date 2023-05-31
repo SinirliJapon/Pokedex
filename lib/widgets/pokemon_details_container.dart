@@ -17,93 +17,85 @@ Container pokemonDetailsContainer(PokemonDetails details) {
     color: color.withOpacity(0.8),
     child: Column(
       children: [
-        pokemonImage(details),
+        const SizedBox(height: 50),
+        Expanded(flex: 3, child: pokemonImage(details)),
         Expanded(
-          flex: 1,
-          child: Padding(
-            padding: const EdgeInsets.only(left: 8.0, right: 8.0),
-            child: Stack(
-              children: [
-                Container(
-                  decoration: BoxDecoration(
-                    boxShadow: [
-                      BoxShadow(
-                        color: Colors.grey.withOpacity(0.5),
-                        spreadRadius: 5,
-                        blurRadius: 7,
-                        offset: const Offset(0, 3),
-                      ),
-                    ],
-                    color: Colors.white,
-                    borderRadius: const BorderRadius.only(
-                      topLeft: Radius.circular(30),
-                      topRight: Radius.circular(30),
+          flex: 4,
+          child: Stack(
+            children: [
+              Container(
+                decoration: BoxDecoration(
+                  boxShadow: [
+                    BoxShadow(
+                      color: Colors.grey.withOpacity(0.5),
+                      spreadRadius: 5,
+                      blurRadius: 7,
+                      offset: const Offset(0, 3),
                     ),
-                  ),
-                  child: Column(
-                    children: [
-                      const SizedBox(height: 10),
-                      pokemonName(details),
-                      const SizedBox(height: 30),
-                      IntrinsicHeight(
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            pokemonHeight(details),
-                            const VerticalDivider(
-                              width: 24,
-                              thickness: 0.2,
-                              color: AppColors.dividerGrey,
-                            ),
-                            pokemonTypes(details),
-                            const VerticalDivider(
-                              width: 30,
-                              thickness: 0.2,
-                              color: AppColors.dividerGrey,
-                            ),
-                            pokemonWeight(details),
-                          ],
-                        ),
-                      ),
-                      const Padding(
-                        padding: EdgeInsets.all(10.0),
-                        child: Divider(
-                          height: 10,
-                          thickness: 0.2,
-                          color: AppColors.dividerGrey,
-                        ),
-                      ),
-                      Text(
-                        details.description,
-                        style: const TextStyle(
-                            fontSize: 16,
-                            fontWeight: FontWeight.bold,
-                            color: AppColors.fontGrey),
-                      ),
-                      const Padding(
-                        padding: EdgeInsets.all(10.0),
-                        child: Divider(
-                          height: 10,
-                          thickness: 0.2,
-                          color: AppColors.dividerGrey,
-                        ),
-                      ),
-                      pokemonAbilities(details, color),
-                      const Padding(
-                        padding: EdgeInsets.all(10.0),
-                        child: Divider(
-                          height: 10,
-                          thickness: 0.2,
-                          color: AppColors.dividerGrey,
-                        ),
-                      ),
-                      pokemonStats(details.stats),
-                    ],
+                  ],
+                  color: Colors.white,
+                  borderRadius: const BorderRadius.only(
+                    topLeft: Radius.circular(30),
+                    topRight: Radius.circular(30),
                   ),
                 ),
-                pokemonID(color, details),
-              ],
-            ),
+                child: Column(
+                  children: [
+                    const SizedBox(height: 10),
+                    pokemonName(details),
+                    const SizedBox(height: 30),
+                    IntrinsicHeight(
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          pokemonHeight(details),
+                          const VerticalDivider(
+                            width: 24,
+                            thickness: 0.2,
+                            color: AppColors.dividerGrey,
+                          ),
+                          pokemonTypes(details),
+                          const VerticalDivider(
+                            width: 30,
+                            thickness: 0.2,
+                            color: AppColors.dividerGrey,
+                          ),
+                          pokemonWeight(details),
+                        ],
+                      ),
+                    ),
+                    const Padding(
+                      padding: EdgeInsets.all(10.0),
+                      child: Divider(
+                        height: 10,
+                        thickness: 0.2,
+                        color: AppColors.dividerGrey,
+                      ),
+                    ),
+                    const Text(
+                      'Base Stats',
+                      style: TextStyle(
+                        fontSize: 20,
+                        fontWeight: FontWeight.bold,
+                        color: AppColors.fontGrey,
+                      ),
+                    ),
+                    const SizedBox(height: 20),
+                    pokemonStats(details.stats),
+                    const Padding(
+                      padding: EdgeInsets.all(10.0),
+                      child: Divider(
+                        height: 10,
+                        thickness: 0.2,
+                        color: AppColors.dividerGrey,
+                      ),
+                    ),
+                    pokemonAbilities(details, color),
+                  ],
+                ),
+              ),
+              pokemonID(color, details),
+            ],
           ),
         ),
       ],

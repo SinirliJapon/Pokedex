@@ -4,8 +4,8 @@ import 'package:pokedex/model/pokemon_details.dart';
 Image pokemonImage(PokemonDetails details) {
   return Image.network(
     details.imageUrl,
-    height: 200,
-    width: 200,
+    height: 300,
+    width: 300,
     fit: BoxFit.contain,
   );
 }
