@@ -15,6 +15,7 @@ dependencies:
   http: ^0.13.5
   palette_generator: ^0.3.3+2
   flutter_svg: ^2.0.5
+  percent_indicator: ^4.2.3
 
 dev_dependencies:
   flutter_test:
