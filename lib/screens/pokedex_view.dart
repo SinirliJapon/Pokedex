@@ -16,15 +16,14 @@ class PokedexView extends StatefulWidget {
 class _PokedexViewState extends State<PokedexView> {
   TextEditingController searchController = TextEditingController();
   String searchQuery = '';
-  List<Pokemon> searchResults = []; // Temporary search results list
-  FocusNode searchFocusNode = FocusNode(); // Add a focus node
+  List<Pokemon> searchResults = [];
+  FocusNode searchFocusNode = FocusNode();
 
   @override
   void initState() {
     super.initState();
     searchFocusNode.addListener(() {
       if (!searchFocusNode.hasFocus) {
-        // When the focus is lost, hide the keyboard
         FocusScope.of(context).unfocus();
       }
     });
@@ -69,7 +68,7 @@ class _PokedexViewState extends State<PokedexView> {
                         color: Colors.white,
                         child: TextField(
                           controller: searchController,
-                          focusNode: searchFocusNode, // Add the focus node
+                          focusNode: searchFocusNode,
                           onChanged: (value) {
                             setState(() {
                               searchQuery = value.toLowerCase();
@@ -91,7 +90,6 @@ class _PokedexViewState extends State<PokedexView> {
                 ),
                 Expanded(
                   child: GestureDetector(
-                    // Add a GestureDetector to handle tap gestures and hide the keyboard
                     onTap: () {
                       FocusScope.of(context).unfocus();
                     },
