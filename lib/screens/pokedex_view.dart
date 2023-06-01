@@ -101,8 +101,6 @@ class _PokedexViewState extends State<PokedexView> {
                         gridDelegate:
                             const SliverGridDelegateWithFixedCrossAxisCount(
                           crossAxisCount: 3,
-                          crossAxisSpacing: 8,
-                          mainAxisSpacing: 8,
                         ),
                         itemCount: searchQuery.isEmpty
                             ? state.pokemon.length
