@@ -13,7 +13,7 @@ class PokemonDetailsView extends StatelessWidget {
       body: BlocBuilder<PokemonDetailsCubit, PokemonDetails?>(
         builder: (context, details) {
           return details != null
-              ? pokemonDetailsContainer(details)
+              ? pokemonDetailsContainer(context, details)
               : const Center(child: CircularProgressIndicator());
         },
       ),
