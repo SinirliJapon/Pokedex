@@ -13,7 +13,6 @@ dependencies:
   cupertino_icons: ^1.0.2
   flutter_bloc: ^8.1.2
   http: ^0.13.5
-  palette_generator: ^0.3.3+2
   flutter_svg: ^2.0.5
   percent_indicator: ^4.2.3
 
@@ -26,18 +25,5 @@ dev_dependencies:
 flutter:
   assets:
     - assets/icons/
-    # - assets/images/Dark_Type_Icon.svg.png
-    # - assets/images/Electric_Type_Icon.svg.png
-    # - assets/images/Fairy_Type_Icon.svg.png
-    # - assets/images/Fighting_Type_Icon.svg.png
-    # - assets/images/Ground_Type_Icon.svg.png
-    # - assets/images/Ice_Type_Icon.svg.png
-    # - assets/images/Normal_Type_Icon.svg.png
-    # - assets/images/Poison_Type_Icon.svg.png
-    # - assets/images/Psychic_Type_Icon.svg.png
-    # - assets/images/Rock_Type_Icon.svg.png
-    # - assets/images/Steel_Type_Icon.svg.png
-    # - assets/images/Water_Type_Icon.svg.png
-
 
   uses-material-design: true
