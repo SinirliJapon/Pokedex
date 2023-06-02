@@ -23,7 +23,6 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     final pokemonDetailsCubit = PokemonDetailsCubit();
     return MaterialApp(
-      debugShowCheckedModeBanner: false,
       theme: ThemeData(primarySwatch: AppColors.primarySwatch),
       home: MultiBlocProvider(
         providers: [
