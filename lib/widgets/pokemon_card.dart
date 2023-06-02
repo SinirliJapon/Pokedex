@@ -3,6 +3,7 @@ import 'package:pokedex/bloc/nav_cubit.dart';
 import 'package:pokedex/constants/app_colors.dart';
 import 'package:pokedex/model/pokemon.dart';
 import 'package:flutter/material.dart';
+import 'package:transparent_image/transparent_image.dart';
 
 Widget buildPokemonCard(BuildContext context, Pokemon pokemon) {
   const backgroundColor = AppColors.backgroundColor;
@@ -33,8 +34,9 @@ Widget buildPokemonCard(BuildContext context, Pokemon pokemon) {
           child: GridTile(
             child: Column(
               children: [
-                Image.network(
-                  pokemon.imageUrl,
+                FadeInImage.memoryNetwork(
+                  placeholder: kTransparentImage,
+                  image: pokemon.imageUrl,
                   height: 90,
                 ),
                 Text(
