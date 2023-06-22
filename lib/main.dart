@@ -6,7 +6,7 @@ import 'package:pokedex/bloc/pokemon_details_cubit.dart';
 import 'package:pokedex/bloc/pokemon_event.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:pokedex/constants/app_colors.dart';
+import 'package:pokedex/constants/colors/app_colors.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();

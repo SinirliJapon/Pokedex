@@ -2,14 +2,32 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:pokedex/model/pokemon_details.dart';
 
-Row pokemonTypes(PokemonDetails details) {
-  return Row(
-    mainAxisAlignment: MainAxisAlignment.center,
-    children: details.types.map((type) => pokemonTypeView(type)).toList(),
-  );
+class PokemonTypes extends StatelessWidget {
+  final PokemonDetails details;
+
+  const PokemonTypes({
+    required this.details,
+    Key? key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children:
+          details.types.map((type) => PokemonTypeView(type: type)).toList(),
+    );
+  }
 }
 
-Widget pokemonTypeView(String type) {
+class PokemonTypeView extends StatelessWidget {
+  final String type;
+
+  PokemonTypeView({
+    required this.type,
+    Key? key,
+  }) : super(key: key);
+
   final Map<String, String> typeToIcon = {
     'normal': 'assets/icons/normal.svg',
     'poison': 'assets/icons/poison.svg',
@@ -52,33 +70,36 @@ Widget pokemonTypeView(String type) {
     'fairy': const Color(0xFFEEB0FA),
   };
 
-  final String? iconAsset = typeToIcon[type];
-  final Color color = typeToColor[type] ?? Colors.black;
-  final Widget icon = iconAsset != null
-      ? SvgPicture.asset(iconAsset, width: 16, height: 16)
-      : const SizedBox();
+  @override
+  Widget build(BuildContext context) {
+    final String? iconAsset = typeToIcon[type];
+    final Color color = typeToColor[type] ?? Colors.black;
+    final Widget icon = iconAsset != null
+        ? SvgPicture.asset(iconAsset, width: 16, height: 16)
+        : const SizedBox();
 
-  return Padding(
-    padding: const EdgeInsets.symmetric(horizontal: 4),
-    child: Container(
-      padding: const EdgeInsets.all(8),
-      decoration: BoxDecoration(
-        color: color,
-        borderRadius: const BorderRadius.all(Radius.circular(8)),
-      ),
-      child: Row(
-        children: [
-          icon,
-          const SizedBox(width: 4),
-          Text(
-            type.toUpperCase(),
-            style: const TextStyle(
-              color: Colors.white,
-              fontWeight: FontWeight.bold,
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 4),
+      child: Container(
+        padding: const EdgeInsets.all(8),
+        decoration: BoxDecoration(
+          color: color,
+          borderRadius: const BorderRadius.all(Radius.circular(8)),
+        ),
+        child: Row(
+          children: [
+            icon,
+            const SizedBox(width: 4),
+            Text(
+              type.toUpperCase(),
+              style: const TextStyle(
+                color: Colors.white,
+                fontWeight: FontWeight.bold,
+              ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
-    ),
-  );
+    );
+  }
 }

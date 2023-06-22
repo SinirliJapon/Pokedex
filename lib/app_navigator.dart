@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:pokedex/bloc/nav_cubit.dart';
-import 'package:pokedex/screens/pokedex_view.dart';
-import 'package:pokedex/screens/pokemon_details_view.dart';
+import 'package:pokedex/screens/pokedex_screen/pokedex_view.dart';
+import 'package:pokedex/screens/pokemon_details_screen/pokemon_details_view.dart';
 
 class AppNavigator extends StatelessWidget {
   const AppNavigator({Key? key}) : super(key: key);
