@@ -24,13 +24,15 @@ class _PokedexViewColumnState extends State<PokedexViewColumn> {
         PokedexSearchBox(
           state: widget.state,
           onSearchQueryChanged: (value) {
-            setState(() {
-              searchQuery = value.toLowerCase();
-              searchResults = widget.state.pokemon
-                  .where((pokemon) =>
-                      pokemon.name.toLowerCase().startsWith(searchQuery))
-                  .toList();
-            });
+            setState(
+              () {
+                searchQuery = value.toLowerCase();
+                searchResults = widget.state.pokemon
+                    .where((pokemon) =>
+                        pokemon.name.toLowerCase().startsWith(searchQuery))
+                    .toList();
+              },
+            );
           },
         ),
         PokedexGrid(

@@ -17,11 +17,11 @@ class PokemonStats extends StatelessWidget {
 
     Map<String, String> statAbbreviations = {
       'hp': 'HP',
-      'attack': 'ATK',
-      'defense': 'DEF',
-      'special-attack': 'SP-ATK',
-      'special-defense': 'SP-DEF',
-      'speed': 'SPD',
+      'attack': 'ATTACK',
+      'defense': 'DEFENCE',
+      'special-attack': 'SP-ATTACK',
+      'special-defense': 'SP-DEFENCE',
+      'speed': 'SPEED',
     };
 
     for (int i = 0; i < stats.length; i++) {
@@ -29,11 +29,8 @@ class PokemonStats extends StatelessWidget {
       List<String> parts = stat.split(':');
       String originalStatName = parts[0].trim();
       int baseStat = int.tryParse(parts[1].trim()) ?? 0;
-
       Color statColor = statColors[i % statColors.length];
-
       String statName = statAbbreviations[originalStatName] ?? originalStatName;
-
       statWidgets.add(
         Padding(
           padding: const EdgeInsets.symmetric(
@@ -45,7 +42,7 @@ class PokemonStats extends StatelessWidget {
               Row(
                 children: [
                   Expanded(
-                    flex: 2,
+                    flex: 3,
                     child: Text(
                       statName,
                       style: const TextStyle(
@@ -56,7 +53,7 @@ class PokemonStats extends StatelessWidget {
                     ),
                   ),
                   Expanded(
-                    flex: 8,
+                    flex: 7,
                     child: ClipRRect(
                       borderRadius: BorderRadius.circular(30),
                       child: LinearPercentIndicator(

@@ -20,7 +20,7 @@ class PokemonCard extends StatelessWidget {
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
         margin: const EdgeInsets.all(8),
         child: GestureDetector(
-          onTap: () =>BlocProvider.of<NavCubit>(context).showPokemonDetails(pokemon.id),
+          onTap: () => BlocProvider.of<NavCubit>(context).showPokemonDetails(pokemon.id),
           child: PokedexViewContainer( backgroundColor: backgroundColor, pokemon: pokemon),
         ),
       ),
