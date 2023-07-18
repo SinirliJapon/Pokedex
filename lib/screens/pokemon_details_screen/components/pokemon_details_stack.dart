@@ -22,10 +22,11 @@ class PokemonDetailsStack extends StatelessWidget {
 
   Padding divider() {
     return const Padding(
-      padding: EdgeInsets.all(10.0),
+      padding:
+          EdgeInsets.only(top: 10.0, bottom: 10.0, left: 20.0, right: 20.0),
       child: Divider(
         height: 5,
-        thickness: 0.2,
+        thickness: 0.5,
         color: AppColors.dividerGrey,
       ),
     );
@@ -49,13 +50,13 @@ class PokemonDetailsStack extends StatelessWidget {
                     PokemonHeight(details: details),
                     const VerticalDivider(
                       width: 24,
-                      thickness: 0.2,
+                      thickness: 0.5,
                       color: AppColors.dividerGrey,
                     ),
                     PokemonTypes(details: details),
                     const VerticalDivider(
                       width: 30,
-                      thickness: 0.2,
+                      thickness: 0.5,
                       color: AppColors.dividerGrey,
                     ),
                     PokemonWeight(details: details),

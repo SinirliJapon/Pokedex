@@ -24,6 +24,7 @@ class PokemonWeight extends StatelessWidget {
             color: AppColors.fontGrey,
           ),
         ),
+        const SizedBox(height: 5),
         const Text(
           'WEIGHT',
           style: TextStyle(

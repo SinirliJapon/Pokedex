@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:pokedex/bloc/pokemon_bloc.dart';
 import 'package:pokedex/bloc/pokemon_state.dart';
-import 'package:pokedex/constants/colors/app_colors.dart';
+import 'package:pokedex/screens/pokedex_screen/components/pokedex_app_bar.dart';
 import 'components/pokedex_view_column.dart';
 
 class PokedexView extends StatefulWidget {
@@ -16,18 +16,7 @@ class _PokedexViewState extends State<PokedexView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Center(
-          child: Text(
-            'Pokedex',
-            style: TextStyle(
-              color: AppColors.fontGrey,
-              fontWeight: FontWeight.bold,
-              fontSize: 22,
-            ),
-          ),
-        ),
-      ),
+      appBar: AppBar(title: const PokedexAppBarTitle()),
       body: BlocBuilder<PokemonBloc, PokemonState>(
         builder: (context, state) {
           if (state is PokemonLoadInProgress) {
