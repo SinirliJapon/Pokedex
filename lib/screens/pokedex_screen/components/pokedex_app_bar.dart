@@ -6,20 +6,16 @@ class PokedexAppBarTitle extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Row(
+    return const Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-        const Text(
+        Text(
           'Pokedex',
           style: TextStyle(
             color: AppColors.fontGrey,
             fontWeight: FontWeight.bold,
             fontSize: 22,
           ),
-        ),
-        IconButton(
-          onPressed: () {},
-          icon: const Icon(Icons.star_border_outlined),
         ),
       ],
     );
