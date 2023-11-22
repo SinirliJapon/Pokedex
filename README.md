@@ -10,7 +10,7 @@ Pokedex is a mobile app that provides information on various Pokemon species. Th
 - Bloc Pattern
 - API Integration
 
-#### Screenshots
+## Screenshots
 
 ![Pokedex_1](https://github.com/SinirliJapon/Pokedex/assets/74076865/5578e91a-683f-42c4-b395-c96315a73431) 
 
